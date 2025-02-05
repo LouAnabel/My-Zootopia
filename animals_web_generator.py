@@ -17,5 +17,4 @@ def print_animal_data(animals_data):
         if "type" in animal['characteristics']:
             print(f"Type: {animal['characteristics']['type']}")
         print(" ")
-
 print_animal_data(animals_data)
