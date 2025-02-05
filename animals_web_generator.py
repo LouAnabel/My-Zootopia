@@ -25,3 +25,5 @@ html_content = html_content.replace("__REPLACE_ANIMALS_INFO__", output)
 with open("animals.html", 'w') as new_file:
     new_file.write(html_content)
 
+
+
