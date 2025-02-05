@@ -6,12 +6,6 @@ def load_data(file_path):
     return json.load(file)
 
 animals_data = load_data('animals_data.json')
-# print(animals_data)
-# Write a simple Python script that reads the content of animals_data.json, iterates through the animals, and for each one prints:
-# Name
-# Diet
-# The first location from the locations list
-# Type
 
 def print_animal_data(animals_data):
     print(" ")
