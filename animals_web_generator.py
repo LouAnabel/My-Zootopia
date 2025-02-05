@@ -8,9 +8,8 @@ def load_data(file_path):
     return json.load(file)
 animals_data = load_data('animals_data.json')
 
-output = ' '  # define an empty string
-for animal in animals_data:
-    # append information to each string
+def serialize_animal(animal_obj):
+    output = ' '
     output += "<li class='cards__item'>\n"
     output += f"<div class='card__title'>{animal['name']}</div>\n"
     output += "<p class='card__text'>\n"
@@ -20,6 +19,11 @@ for animal in animals_data:
         output += f"<strong>Type:</strong> {animal['characteristics']['type']}\n"
     output += "</p>"
     output += "</li>"
+    return output
+
+output = ''
+for animal in animals_data:
+    output += serialize_animal(animal)
 
 html_content = html_content.replace("__REPLACE_ANIMALS_INFO__", output)
 
