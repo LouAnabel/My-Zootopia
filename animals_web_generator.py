@@ -1,13 +1,15 @@
 import json
 
+"""creates the string of all the info for each 
+animal that will be added to the json and displayed on the website"""
 def serialize_animal(animal):
     output = ' '
     output += "<li class='cards__item'>\n"
-    output += f"<div class='card__title'>{animal['name']}</div><br/>\n"
+    output += f"<div class='card__title'>{animal.get('name', 'Unknown')}</div><br/>\n"
     output += "<div class='card__text'>\n"
     output += "<ul class='info_block'\n>"
-    output += f"<li class='diet'><strong>Diet:</strong> {animal['characteristics']['diet']}<br/>\n"
-    output += f"<li class='location'><strong>Location:</strong> {' and '.join(animal['locations'])}<br/>\n"
+    output += f"<li class='diet'><strong>Diet:</strong> {animal.get('characteristics', 'Unknown')['diet']}<br/>\n"
+    output += f"<li class='location'><strong>Location:</strong> {' and '.join(animal.get('locations', 'Unknown'))}<br/>\n"
     if "type" in animal['characteristics']:
         output += f"<li class='type'><strong>Type:</strong> {animal['characteristics']['type']}\n"
     output += "</ul>"
